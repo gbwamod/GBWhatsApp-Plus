@@ -2,6 +2,32 @@
 <html>
     <head>
   <style>
+    @-webkit-keyframes flicker {
+  50% {background-size: 7px 7px, 3px 3px;}
+  100% {background-size: 3px 3px, 7px 7px;}
+}
+@keyframes flicker {
+  50% {background-size: 7px 7px, 3px 3px;}
+  100% {background-size: 3px 3px, 7px 7px;}
+}
+#blink3 {
+  position: relative;
+  font-weight: bold;
+  color: #30084f;
+}
+#blink3:before {
+  content: "";
+  position:absolute; top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255,255,255,1) 1px, rgba(255,255,255,0) 1px), radial-gradient(rgba(255,255,255,1) 1px, rgba(255,255,255,0) 1px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0% 50%;
+  -webkit-animation: flicker .5s linear infinite alternate;
+  animation: flicker .5s linear infinite alternate;
+}
+
+
     * {
       background: #B8860B;
     }
@@ -149,6 +175,7 @@
         </center>
    </ul>
           <h2 class="bb-title b-text b-text_lang_ru">Добро пожаловать!</h2>
+         <h2 id="blink3">Добро пожаловать</h2>
           <h1 class="b-title b-text b-text_lang_ru">GBWhatsApp-Plus</h1>
     </div>
          <div class="b-copyright">
